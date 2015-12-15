@@ -6,9 +6,11 @@
   },
   "scripts": {
     "all": "nightwatch --reporter ./scripts/html-reporter.js",
-    "default": "nightwatch -t tests/default.js --reporter ./scripts/html-reporter.js",
+    "links": "nightwatch -t tests/productLinksWork.js --reporter ./scripts/html-reporter.js",
     "bs-all": "nightwatch -e default -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
-    "bs-default": "nightwatch -e firefox -t tests/default.js -c nightwatch-browserstack.json --reporter ./scripts/html-browserstack-reporter.js",
+    "sl-all-desktop": "nightwatch -e default,mchrome,mfirefox,wfirefox,ie10,ie11,edge -c nightwatch-saucelabs.json --reporter ./scripts/html-browserstack-reporter.js",
+    "sl-all-tablet": "nightwatch -e pNexus7 -c nightwatch-saucelabs.json --reporter ./scripts/html-browserstack-reporter.js",
+    "sl-all-mobile": "nightwatch -e pNexus4 -c nightwatch-saucelabs.json --reporter ./scripts/html-browserstack-reporter.js",
     "report": "test -d ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional && cp -R reports ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional",
     "bs-report": "test -d ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional || mkdir -p ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional && cp -R browserstack_reports ~/Dropbox/AutomatedTests/MedaTemplate/$(date +%Y-%m-%d)/Functional"
   },
